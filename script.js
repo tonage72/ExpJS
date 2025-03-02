@@ -5,12 +5,15 @@ const pickedTag = document.querySelectorAll('.picked-tag')
 const cardDesc = document.querySelectorAll('.card-desc')
 
 card.forEach((card, index) => {
+	let addedCount = {[index]: 0}
 	buttonAdd[index].addEventListener('click', () => {
-		addToCart(card, index)
+		addToCart(card, index, addedCount)
 	})
 })
 
-function addToCart(card, index) {
+function addToCart(card, index, addedCount) {
+	addedCount[index]++
+	console.log(addedCount)
 	const cartItem = document.createElement('div')
 	pickedTag[index].style.backgroundColor = 'orange'
 	cartItem.classList.add('cart-item')
