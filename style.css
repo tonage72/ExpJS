@@ -1,0 +1,38 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+body {
+	background-color: black;
+}
+
+.card {
+	background-color: brown;
+	margin: 1cqi auto 1cqi auto;
+	width: fit-content;
+	padding: 1cqi;
+	text-align: center;
+}
+
+.cart {
+	text-align: center;
+	height: auto;
+	background-color: aquamarine;
+	margin: 1cqi auto 1cqi auto;
+	width: fit-content;
+	min-width: 10cqi;
+}
+
+.cart-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 1cqi;
+}
