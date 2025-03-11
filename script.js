@@ -3,6 +3,7 @@ const buttonAdd = document.querySelectorAll('.button-add')
 const cart = document.querySelector('.cart')
 const pickedTag = document.querySelectorAll('.picked-tag')
 const cardDesc = document.querySelectorAll('.card-desc')
+const divPickedTag = document.querySelectorAll('.div-picked-tag')
 
 card.forEach((card, index) => {
 	let addedCount = {[index]: 0}
@@ -13,9 +14,10 @@ card.forEach((card, index) => {
 
 function addToCart(card, index, addedCount) {
 	addedCount[index]++
-	console.log(addedCount)
+	buttonAdd[index].style.display = 'none'
+	divPickedTag[index].style.display = 'block'
+	pickedTag[index].textContent = addedCount[index]
 	const cartItem = document.createElement('div')
-	pickedTag[index].style.backgroundColor = 'orange'
 	cartItem.classList.add('cart-item')
 	cartItem.innerHTML = cardDesc[index].textContent
 	cart.appendChild(cartItem)
@@ -24,6 +26,8 @@ function addToCart(card, index, addedCount) {
 	deleteButton.classList.add('delete-button')
 	deleteButton.innerHTML = "X"
 	deleteButton.addEventListener('click', () => {
+		addedCount[index]--
+		pickedTag[index].textContent = addedCount[index]
 		cartItem.remove()
 	})
 	cartItem.appendChild(deleteButton)

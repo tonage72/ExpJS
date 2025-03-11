@@ -36,3 +36,8 @@ body {
 	align-items: center;
 	margin: 1cqi;
 }
+
+.div-picked-tag {
+	background-color: orange;
+	display: none;
+}
