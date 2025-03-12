@@ -4,9 +4,19 @@ const cart = document.querySelector('.cart')
 const pickedTag = document.querySelectorAll('.picked-tag')
 const cardDesc = document.querySelectorAll('.card-desc')
 const divPickedTag = document.querySelectorAll('.div-picked-tag')
+const plusButton = document.querySelectorAll('.plus-button')
+const minusButton = document.querySelectorAll('.minus-button')
 
 card.forEach((card, index) => {
 	let addedCount = {[index]: 0}
+	plusButton[index].addEventListener('click', () => {
+		addedCount[index]++
+		pickedTag[index].textContent = addedCount[index]
+	})
+	minusButton[index].addEventListener('click', () => {
+		addedCount[index]--
+		pickedTag[index].textContent = addedCount[index]
+	})
 	buttonAdd[index].addEventListener('click', () => {
 		addToCart(card, index, addedCount)
 	})
