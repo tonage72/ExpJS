@@ -18,11 +18,11 @@ card.forEach((card, index) => {
 		pickedTag[index].textContent = addedCount[index]
 	})
 	buttonAdd[index].addEventListener('click', () => {
-		addToCart(card, index, addedCount)
+		addToCart(index, addedCount)
 	})
 })
 
-function addToCart(card, index, addedCount) {
+function addToCart(index, addedCount) {
 	addedCount[index]++
 	buttonAdd[index].style.display = 'none'
 	divPickedTag[index].style.display = 'block'
